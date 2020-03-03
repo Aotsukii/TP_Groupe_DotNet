@@ -1,6 +1,6 @@
 using System;
 
-namespace Tp_Groupe.Models
+namespace TP_Groupe.Models
 {
     public class ErrorViewModel
     {

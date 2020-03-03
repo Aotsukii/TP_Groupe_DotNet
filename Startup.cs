@@ -8,8 +8,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TP_Groupe.Repository;
 
-namespace Tp_Groupe
+namespace TP_Groupe
 {
     public class Startup
     {
@@ -24,6 +25,13 @@ namespace Tp_Groupe
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddScoped<IArticleRepository,ArticleRepository>();
+            services.AddScoped<IEtagereRepository,EtagereRepository>();
+            services.AddScoped<IPositionMagasinRepository,PositionMagasinRepository>();
+            services.AddScoped<ISecteurRepository,SecteurRepository>();
+
+            // vv Permet de créer une instance unique d'un repository
+            // services.AddSingleton<ArticleRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

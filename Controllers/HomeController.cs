@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Tp_Groupe.Models;
+using TP_Groupe.Models;
 
-namespace Tp_Groupe.Controllers
+namespace TP_Groupe.Controllers
 {
     public class HomeController : Controller
     {

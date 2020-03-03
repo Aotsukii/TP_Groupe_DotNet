@@ -1,4 +1,4 @@
-namespace TP_Groupe_DotNet.Models
+namespace TP_Groupe.Models
 {
     public class PositionMagasin
     {
