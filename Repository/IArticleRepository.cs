@@ -10,5 +10,6 @@ namespace TP_Groupe.Repository
         void Update(Article article);
         void Remove(Article article);
         Article GetById(int Id);
+        List<Article> GetAllArticles();
     }
 }

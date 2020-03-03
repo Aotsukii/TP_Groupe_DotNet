@@ -1,5 +1,6 @@
 using System;
 using TP_Groupe.Models;
+using System.Collections.Generic;
 
 namespace TP_Groupe.Repository
 {
@@ -18,6 +19,10 @@ namespace TP_Groupe.Repository
             throw new NotImplementedException();
         }
         public Article GetById(int Id)
+        {
+            throw new NotImplementedException();
+        }
+        public List<Article> GetAllArticles()
         {
             throw new NotImplementedException();
         }
