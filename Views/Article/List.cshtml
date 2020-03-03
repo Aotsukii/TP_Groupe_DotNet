@@ -1,0 +1,15 @@
+@model IEnumerable<TP_Groupe.Models.Article>
+
+<html>
+    <head>
+        <p>Liste des Articles</p>
+    </head>
+    <body>
+        @foreach (var article in Model)
+        {
+            <h1>@article.Libelle</h1>
+            <h2>@article.PrixInitial.ToString()</h2>
+            <h3>@article.Poids.ToString()</h3>
+        }
+    </body>
+</html>
