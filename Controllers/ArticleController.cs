@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using TP_Groupe.Models;
 using TP_Groupe.Repository;
+using TP_Groupe.ViewModels;
 
 
 namespace TP_Groupe.Controllers
@@ -28,8 +29,9 @@ namespace TP_Groupe.Controllers
 
         public IActionResult List()
         {
-            var articles = _articleRepository.GetAllArticles();
-            return View(articles);
+            var articleListViewModel = new ArticleListViewModel();
+            articleListViewModel.Articles = _articleRepository.GetAllArticles();
+            return View(articleListViewModel);
         }
     }
 }

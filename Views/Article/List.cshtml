@@ -1,14 +1,14 @@
-@model IEnumerable<TP_Groupe.Models.Article>
+@model TP_Groupe.ViewModels.ArticleListViewModel
 
 <html>
     <head>
         <p>Liste des Articles</p>
     </head>
     <body>
-        @foreach (var article in Model)
+        @foreach (var article in Model.Articles)
         {
             <h1>@article.Libelle</h1>
-            <h2>@article.PrixInitial.ToString()</h2>
+            <h2>@article.PrixInitial.ToString("C")</h2>
             <h3>@article.Poids.ToString()</h3>
         }
     </body>

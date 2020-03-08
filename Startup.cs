@@ -27,7 +27,7 @@ namespace TP_Groupe
             services.AddControllersWithViews();
             
             // vv Injection de dependances
-            services.AddScoped<IArticleRepository,ArticleRepository>();
+            services.AddScoped<IArticleRepository,MockArticleRepository>();
             services.AddScoped<IEtagereRepository,EtagereRepository>();
             services.AddScoped<IPositionMagasinRepository,PositionMagasinRepository>();
             services.AddScoped<ISecteurRepository,SecteurRepository>();
