@@ -1,25 +1,44 @@
 using System;
 using TP_Groupe.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace TP_Groupe.Repository
 {
     public class SecteurRepository : ISecteurRepository
     {
+        private readonly AppDbContext _dbContext;
+        // private readonly AppDbContext _dbSet;
+
+        public SecteurRepository(AppDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+        
         public void Insert(Secteur secteur)
         {
-            throw new NotImplementedException();
+            _dbContext.Secteurs.Add(secteur);
         }
         public void Update(Secteur secteur)
         {
-            throw new NotImplementedException();
+            _dbContext.Update(secteur);
+            _dbContext.SaveChanges();
+
         }
         public void Remove(Secteur secteur)
         {
-            throw new NotImplementedException();
+            _dbContext.Remove(secteur);
+            _dbContext.SaveChanges();
         }
-        public Secteur GetById(int Id)
+
+        public IEnumerable<Secteur> GetAllSecteurs()
         {
-            throw new NotImplementedException();
+            return  _dbContext.Secteurs;
+        }
+
+        public Secteur GetById(int id)
+        {
+            return _dbContext.Secteurs.FirstOrDefault(a => a.Id == id);
         }
     }
 }

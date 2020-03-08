@@ -5,11 +5,11 @@
         <p>Liste des Articles</p>
     </head>
     <body>
-        @foreach (var article in Model.Articles)
-        {
-            <h1>@article.Libelle</h1>
-            <h2>@article.PrixInitial.ToString("C")</h2>
-            <h3>@article.Poids.ToString()</h3>
-        }
+        <div class="row">
+            @foreach (var article in Model.Articles)
+            {
+                <partial name="_CardArticle" model="@article" />
+            }
+        </div>
     </body>
 </html>

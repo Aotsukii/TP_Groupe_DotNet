@@ -1,0 +1,10 @@
+@model Secteur
+
+<div class="card col-md-3">
+    <div class="card-body">
+        <h5 class="card-title">Secteur n°@Model.Id</h5>
+        <hr>
+        <p class="card-text">Nom : @Model.Nom</p>
+        <a asp-controller="Secteur" asp-action="Edit" asp-route-idSecteur="@Model.Id" class="btn btn-primary">Editer</a>
+    </div>
+</div>

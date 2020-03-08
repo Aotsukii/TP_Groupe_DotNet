@@ -6,8 +6,8 @@ using TP_Groupe.Models;
 
 namespace TP_Groupe.ViewModels
 {
-    public class ArticleListViewModel
+    public class EtagereListViewModel
     {
-        public IEnumerable<Article> Articles {get;set;}
+        public IEnumerable<Etagere> Etageres {get;set;}
     }
 }

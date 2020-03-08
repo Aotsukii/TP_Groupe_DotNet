@@ -1,0 +1,10 @@
+@model Etagere
+
+<div class="card col-md-3">
+    <div class="card-body">
+        <h5 class="card-title">Etagere n°@Model.Id</h5>
+        <hr>
+        <p class="card-text">Poids maximum: @Model.PoidsMaximum.ToString() kg</p>
+        <a asp-controller="Etagere" asp-action="Edit" asp-route-idEtagere="@Model.Id" class="btn btn-primary">Editer</a>
+    </div>
+</div>

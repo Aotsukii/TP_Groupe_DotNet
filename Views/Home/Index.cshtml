@@ -1,8 +1,29 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Stock Admin";
 }
+@model TP_Groupe.ViewModels.ArticleListViewModel
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="jumbotron shadow">
+    <h1 class="display-4">Stock Admin</h1>
+    <p class="lead">Application développée dans le cadre d'un projet en équipe</p>
+    <hr class="my-4"/>
+    <div class="list-group shadow">
+        <button type="button" class="list-group-item list-group-item-action active">
+            TEAM
+        </button>
+        <a type="button" href="https://github.com/pittoul" class="list-group-item list-group-item-action">Samir</a>
+        <a type="button" href="https://github.com/Aotsukii" class="list-group-item list-group-item-action">Elie</a>
+        <a type="button" href="https://github.com/Epradillon" class="list-group-item list-group-item-action">Etienne</a>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <a class="btn btn-success btn-lg mt-2 shadow col-xs-12 col-md-3" href="https://github.com/Aotsukii/TP_Groupe_DotNet" role="button">Lien GitHub</a>
+    </div>
+    
+</div>
+<h1 class="display-4">Quatres derniers articles ajoutées</h1>
+<div class="row">
+    @foreach (var article in Model.Articles)
+    {
+        <partial name="_CardArticle" model="@article" />
+    }
 </div>

@@ -8,7 +8,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
 using TP_Groupe.Repository;
+using TP_Groupe.Models;
 
 namespace TP_Groupe
 {
@@ -27,7 +29,8 @@ namespace TP_Groupe
             services.AddControllersWithViews();
             
             // vv Injection de dependances
-            services.AddScoped<IArticleRepository,MockArticleRepository>();
+            services.AddDbContext<AppDbContext>(options => options.UseSqlite("Filename=tp_dotnet.db"));
+            services.AddScoped<IArticleRepository,ArticleRepository>();
             services.AddScoped<IEtagereRepository,EtagereRepository>();
             services.AddScoped<IPositionMagasinRepository,PositionMagasinRepository>();
             services.AddScoped<ISecteurRepository,SecteurRepository>();

@@ -19,7 +19,7 @@ namespace TP_Groupe.Repository
         {
             throw new NotFiniteNumberException();
         }
-        public List<Article> GetAllArticles()
+        public IEnumerable<Article> GetAllArticles()
         {
             return new List<Article>()
             {

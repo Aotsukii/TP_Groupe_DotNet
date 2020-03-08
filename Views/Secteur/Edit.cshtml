@@ -1,0 +1,12 @@
+@model Secteur
+
+<h1 class="display-4">Modification du secteur n°: @Model.Id</h1>
+<div class="row">
+    <form>
+        <div class="form-group">
+            <label for="poids">Nom</label>
+            <input type="text" class="form-control" id="poids" value="@Model.Nom">
+        </div>
+        <button type="submit" class="btn btn-primary">Modifier</button>
+    </form>
+</div>

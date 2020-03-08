@@ -1,0 +1,32 @@
+@model Article
+
+<html>
+    <head>
+        <p>Ajouter un article</p>
+    </head>
+    <body>
+        <form asp-controller="Article" asp-action="Create" method="Post">
+            <div class="form-group">
+                <label asp-for="Libelle">Libelle</label>
+                <input asp-for="Libelle" type="text" class="form-control" id="libelle">
+            </div>
+            <div class="form-group">
+                <label asp-for="PrixInitial">Prix initial</label>
+                <input asp-for="PrixInitial" type="text" class="form-control" id="poids">
+            </div>
+            <div class="form-group">
+                <label asp-for="SKU">SKU</label>
+                <input asp-for="SKU" type="text" class="form-control" id="poids">
+            </div>
+            <div class="form-group">
+                <label asp-for="Poids">Poids</label>
+                <input asp-for="Poids" type="text" class="form-control" id="poids">
+            </div>
+            <div class="form-group">
+                <label asp-for="DateSortie">Date de sortie</label>
+                <input asp-for="DateSortie" type="date" class="form-control" id="poids">
+            </div>
+            <button type="submit" class="btn btn-primary">Ajouter un article</button>
+        </form> 
+    </body>
+</html>

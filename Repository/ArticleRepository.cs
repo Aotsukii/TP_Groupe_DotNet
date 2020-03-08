@@ -1,30 +1,45 @@
 using System;
 using TP_Groupe.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TP_Groupe.Repository
 {
     public class ArticleRepository : IArticleRepository
     {
+        private readonly AppDbContext _dbContext;
+        // private readonly AppDbContext _dbSet;
+
+        public ArticleRepository(AppDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+        
         public void Insert(Article article)
         {
-            throw new NotImplementedException();
+            _dbContext.Articles.Add(article);
+            _dbContext.SaveChanges();
         }
         public void Update(Article article)
         {
-            throw new NotImplementedException();
+            _dbContext.Update(article);
+            _dbContext.SaveChanges();
+
         }
         public void Remove(Article article)
         {
-            throw new NotImplementedException();
+            _dbContext.Remove(article);
+            _dbContext.SaveChanges();
         }
-        public Article GetById(int Id)
+
+        public IEnumerable<Article> GetAllArticles()
         {
-            throw new NotImplementedException();
+            return  _dbContext.Articles;
         }
-        public List<Article> GetAllArticles()
+
+        public Article GetById(int id)
         {
-            throw new NotImplementedException();
+            return _dbContext.Articles.FirstOrDefault(a => a.Id == id);
         }
     }
 }
