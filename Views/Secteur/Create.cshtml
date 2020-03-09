@@ -7,8 +7,8 @@
     <body>
         <form asp-controller="Secteur" asp-action="Create" method="Post">
         <div class="form-group">
-            <label for="poids">Nom</label>
-            <input type="text" class="form-control" id="name">
+            <label asp-for="Nom">Nom</label>
+            <input asp-for="Nom" type="text" class="form-control" id="name">
         </div>
         <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
