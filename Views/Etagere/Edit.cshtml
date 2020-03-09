@@ -2,10 +2,14 @@
 
 <h1 class="display-4">Modification de l'étagère : @Model.Id</h1>
 <div class="row">
-    <form>
+    <form asp-controller="Etagere" asp-action="Edit" method="Post">
         <div class="form-group">
-            <label for="poids">Poids maximum</label>
-            <input type="text" class="form-control" id="poids" value="@Model.PoidsMaximum">
+            <label asp-for="PoidsMaximum">Poids maximum</label>
+            <input asp-for="PoidsMaximum"type="text" class="form-control" id="poids" value="@Model.PoidsMaximum">
+        </div>
+        <div class="form-group">
+            <label asp-for="SecteurId">Secteur</label>
+            <input asp-for="SecteurId"type="text" class="form-control" id="poids" value="@Model.SecteurId">
         </div>
         <button type="submit" class="btn btn-primary">Modifier</button>
     </form>

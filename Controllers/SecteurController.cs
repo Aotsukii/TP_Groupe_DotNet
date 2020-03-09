@@ -66,12 +66,45 @@ namespace TP_Groupe.Controllers
             return View(secteurListViewModel);
         }
 
+        
+
+        public IActionResult Create()
+        { 
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Secteur secteur)
+        {
+            _secteurRepository.Insert(secteur);
+            return View();
+        }
+
         public IActionResult Edit(int idSecteur)
         {
             var secteur = _secteurRepository.GetById(idSecteur);
             if(secteur == null){
                 return NotFound();
             } else {
+                return View(secteur);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Secteur secteur)
+        {
+            _secteurRepository.Update(secteur);
+            return View(secteur);
+        }
+
+        public IActionResult Delete(int idSecteur)
+        {
+            var secteur = _secteurRepository.GetById(idSecteur);
+            ViewData["message"] = "Le secteur '" + secteur.Nom + "' a été supprimé avec succès !";
+            if(secteur == null){
+                return NotFound();
+            } else {
+                _secteurRepository.Remove(secteur);
                 return View(secteur);
             }
         }

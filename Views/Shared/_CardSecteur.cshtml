@@ -6,5 +6,6 @@
         <hr>
         <p class="card-text">Nom : @Model.Nom</p>
         <a asp-controller="Secteur" asp-action="Edit" asp-route-idSecteur="@Model.Id" class="btn btn-primary">Editer</a>
+        <a asp-controller="Secteur" asp-action="Delete" asp-route-idSecteur="@Model.Id" class="btn btn-danger">Supprimer</a>
     </div>
 </div>

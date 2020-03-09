@@ -1,0 +1,16 @@
+@model Secteur
+
+<html>
+    <head>
+        <p>Ajouter un secteur</p>
+    </head>
+    <body>
+        <form asp-controller="Secteur" asp-action="Create" method="Post">
+        <div class="form-group">
+            <label for="poids">Nom</label>
+            <input type="text" class="form-control" id="name">
+        </div>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+    </body>
+</html>

@@ -13,17 +13,18 @@ namespace TP_Groupe.Repository
         public SecteurRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
+            _dbContext.SaveChanges();
         }
         
         public void Insert(Secteur secteur)
         {
             _dbContext.Secteurs.Add(secteur);
+            _dbContext.SaveChanges();
         }
         public void Update(Secteur secteur)
         {
             _dbContext.Update(secteur);
             _dbContext.SaveChanges();
-
         }
         public void Remove(Secteur secteur)
         {

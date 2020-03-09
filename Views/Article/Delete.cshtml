@@ -1,2 +1,9 @@
 @model Article
+@{
+    String message = ViewData["message"] as String;
+}
 
+<div class="alert alert-success">
+    @message
+</div>
+<a class="nav-link btn btn-info" asp-area="" asp-controller="Article" asp-action="List">Retour à la liste d'article</a>

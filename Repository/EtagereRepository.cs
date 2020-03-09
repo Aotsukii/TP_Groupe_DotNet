@@ -18,6 +18,7 @@ namespace TP_Groupe.Repository
         public void Insert(Etagere etagere)
         {
             _dbContext.Etageres.Add(etagere);
+            _dbContext.SaveChanges();
         }
         public void Update(Etagere etagere)
         {

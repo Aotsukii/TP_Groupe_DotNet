@@ -6,5 +6,6 @@
         <hr>
         <p class="card-text">Poids maximum: @Model.PoidsMaximum.ToString() kg</p>
         <a asp-controller="Etagere" asp-action="Edit" asp-route-idEtagere="@Model.Id" class="btn btn-primary">Editer</a>
+        <a asp-controller="Etagere" asp-action="Delete" asp-route-idEtagere="@Model.Id" class="btn btn-danger">Supprimer</a>
     </div>
 </div>

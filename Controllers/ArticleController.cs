@@ -96,6 +96,7 @@ namespace TP_Groupe.Controllers
         public IActionResult Delete(int idArticle)
         {
             var article = _articleRepository.GetById(idArticle);
+            ViewData["message"] = "L'article '" + article.Libelle + "' a été supprimé avec succès !";
             if(article == null){
                 return NotFound();
             } else {

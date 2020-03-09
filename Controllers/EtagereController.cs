@@ -65,6 +65,21 @@ namespace TP_Groupe.Controllers
             return View(etagereListViewModel);
         }
 
+        public IActionResult Create()
+        { 
+            ViewData["Secteurs"] = _secteurRepository.GetAllSecteurs();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Etagere etagere)
+        {
+            // var secteur = _secteurRepository.GetById(etagere.Secteur.Id);
+            // etagere.Secteur = secteur;
+            _etagereRepository.Insert(etagere);
+            return View();
+        }
+
         public IActionResult Edit(int idEtagere)
         {
             var etagere = _etagereRepository.GetById(idEtagere);
@@ -74,5 +89,26 @@ namespace TP_Groupe.Controllers
                 return View(etagere);
             }
         }
+
+        [HttpPost]
+        public IActionResult Edit(Etagere etagere)
+        {
+            _etagereRepository.Update(etagere);
+            return View(etagere);
+        }
+
+        public IActionResult Delete(int idEtagere)
+        {
+            var etagere = _etagereRepository.GetById(idEtagere);
+            ViewData["message"] = "L'étagère n°" + etagere.Id + " a été supprimée avec succès !";
+            if(etagere == null){
+                return NotFound();
+            } else {
+                _etagereRepository.Remove(etagere);
+                return View(etagere);
+            }
+        } 
+
+        
     }
 }

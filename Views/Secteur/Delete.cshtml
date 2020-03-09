@@ -1,0 +1,9 @@
+@model Secteur
+@{
+    String message = ViewData["message"] as String;
+}
+
+<div class="alert alert-success">
+    @message
+</div>
+<a class="nav-link btn btn-info" asp-area="" asp-controller="Secteur" asp-action="List">Retour à la liste des secteurs</a>

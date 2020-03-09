@@ -1,0 +1,9 @@
+@model Etagere
+@{
+    String message = ViewData["message"] as String;
+}
+
+<div class="alert alert-success">
+    @message
+</div>
+<a class="nav-link btn btn-info" asp-area="" asp-controller="Etagere" asp-action="List">Retour à la liste des étagères</a>

@@ -2,7 +2,7 @@
 
 <h1 class="display-4">Modification du secteur n°: @Model.Id</h1>
 <div class="row">
-    <form>
+    <form asp-controller="Secteur" asp-action="Edit" method="Post">
         <div class="form-group">
             <label for="poids">Nom</label>
             <input type="text" class="form-control" id="poids" value="@Model.Nom">
